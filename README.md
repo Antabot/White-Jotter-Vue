@@ -4,6 +4,7 @@
 
 ![lisense](https://img.shields.io/github/license/Antabot/White-Jotter-Vue)
 ![release](https://img.shields.io/github/v/release/Antabot/White-Jotter-Vue)
+![Build Status](https://www.travis-ci.org/Antabot/White-Jotter-Vue.svg?branch=master)
 
 
 这是一个简单的前后端分离项目，主要采用 Vue.js + SpringBoot 技术栈开发。
