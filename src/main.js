@@ -140,7 +140,7 @@ router.beforeEach((to, from, next) => {
     }
     if (store.state.username && to.path.startsWith('/login')) {
       next({
-        path: 'admin/dashboard'
+        name: 'Dashboard'
       })
     }
     // 如果前端没有登录信息则直接拦截，如果有则判断后端是否正常登录（防止构造参数绕过）
