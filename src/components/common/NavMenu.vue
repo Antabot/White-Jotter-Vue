@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-menu
-      :default-active="path"
+      :default-active="currentPath"
       router
       mode="horizontal"
       background-color="white"
@@ -34,25 +34,21 @@
           {name: '/library', navItem: '图书馆'},
           {name: '/login', navItem: '管理中心'}
         ],
-        keywords: '',
-        path: ''
-      }
-    },
-    mounted: function () {
-      // 获得第一级路由，以设置导航栏高亮
-      var x = this.$route.path.indexOf('/', 1)
-      if (x !== -1) {
-        this.path = this.$route.path.substring(0, x)
-      } else {
-        this.path = this.$route.path
+        keywords: ''
       }
     },
     computed: {
       hoverBackground () {
         return '#ffd04b'
+      },
+      currentPath () {
+        var x = this.$route.path.indexOf('/', 1)
+        if (x !== -1) {
+          return this.$route.path.substring(0, x)
+        } else {
+          return this.$route.path
+        }
       }
-    },
-    methods: {
     }
   }
 </script>
