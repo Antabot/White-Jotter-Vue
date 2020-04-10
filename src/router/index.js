@@ -1,16 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import AppIndex from '../components/home/AppIndex'
-import Articles from '../components/jotter/Articles'
-import Editor from '../components/admin/content/ArticleEditor'
-import LibraryIndex from '../components/library/LibraryIndex'
-import Login from '../components/Login'
 import Home from '../components/Home'
-import AdminIndex from '../components/admin/AdminIndex'
-import Register from '../components/Register'
-import DashBoard from '../components/admin/dashboard/admin/index'
-import ArticleDetails from '../components/jotter/ArticleDetails'
-import Error404 from '../components/pages/Error404'
 
 Vue.use(Router)
 
@@ -33,22 +23,22 @@ export default new Router({
         {
           path: '/index',
           name: 'AppIndex',
-          component: AppIndex
+          component: () => import('../components/home/AppIndex')
         },
         {
           path: '/jotter',
           name: 'Jotter',
-          component: Articles
+          component: () => import('../components/jotter/Articles')
         },
         {
           path: '/jotter/article',
           name: 'Article',
-          component: ArticleDetails
+          component: () => import('../components/jotter/ArticleDetails')
         },
         {
           path: '/admin/content/editor',
           name: 'Editor',
-          component: Editor,
+          component: () => import('../components/admin/content/ArticleEditor'),
           meta: {
             requireAuth: true
           }
@@ -56,24 +46,24 @@ export default new Router({
         {
           path: '/library',
           name: 'Library',
-          component: LibraryIndex
+          component: () => import('../components/library/LibraryIndex')
         }
       ]
     },
     {
       path: '/login',
       name: 'Login',
-      component: Login
+      component: () => import('../components/Login')
     },
     {
       path: '/register',
       name: 'Register',
-      component: Register
+      component: () => import('../components/Register')
     },
     {
       path: '/admin',
       name: 'Admin',
-      component: AdminIndex,
+      component: () => import('../components/admin/AdminIndex'),
       meta: {
         requireAuth: true
       },
@@ -81,7 +71,7 @@ export default new Router({
         {
           path: '/admin/dashboard',
           name: 'Dashboard',
-          component: DashBoard,
+          component: () => import('../components/admin/dashboard/admin/index'),
           meta: {
             requireAuth: true
           }
@@ -90,7 +80,7 @@ export default new Router({
     },
     {
       path: '*',
-      component: Error404
+      component: () => import('../components/pages/Error404')
     }
   ]
 })
@@ -115,22 +105,22 @@ export const createRouter = routes => new Router({
         {
           path: '/index',
           name: 'AppIndex',
-          component: AppIndex
+          component: () => import('../components/home/AppIndex')
         },
         {
           path: '/jotter',
           name: 'Jotter',
-          component: Articles
+          component: () => import('../components/jotter/Articles')
         },
         {
           path: '/jotter/article',
           name: 'Article',
-          component: ArticleDetails
+          component: () => import('../components/jotter/ArticleDetails')
         },
         {
           path: '/admin/content/editor',
           name: 'Editor',
-          component: Editor,
+          component: () => import('../components/admin/content/ArticleEditor'),
           meta: {
             requireAuth: true
           }
@@ -138,24 +128,24 @@ export const createRouter = routes => new Router({
         {
           path: '/library',
           name: 'Library',
-          component: LibraryIndex
+          component: () => import('../components/library/LibraryIndex')
         }
       ]
     },
     {
       path: '/login',
       name: 'Login',
-      component: Login
+      component: () => import('../components/Login')
     },
     {
       path: '/register',
       name: 'Register',
-      component: Register
+      component: () => import('../components/Register')
     },
     {
       path: '/admin',
       name: 'Admin',
-      component: AdminIndex,
+      component: () => import('../components/admin/AdminIndex'),
       meta: {
         requireAuth: true
       },
@@ -163,7 +153,7 @@ export const createRouter = routes => new Router({
         {
           path: '/admin/dashboard',
           name: 'Dashboard',
-          component: DashBoard,
+          component: () => import('../components/admin/dashboard/admin/index'),
           meta: {
             requireAuth: true
           }
@@ -172,7 +162,7 @@ export const createRouter = routes => new Router({
     },
     {
       path: '*',
-      component: Error404
+      component: () => import('../components/pages/Error404')
     }
   ]
 })
