@@ -33,7 +33,6 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: -20px;
-
   }
 
   #header-div {
