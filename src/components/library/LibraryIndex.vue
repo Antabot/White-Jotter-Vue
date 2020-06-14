@@ -25,6 +25,7 @@
         this.$axios.get(url).then(resp => {
           if (resp && resp.data.code === 200) {
             _this.$refs.booksArea.books = resp.data.result
+            _this.$refs.booksArea.currentPage = 1
           }
         })
       }
